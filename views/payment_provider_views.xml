@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_provider_form_ctechpay" model="ir.ui.view">
+        <field name="name">payment.provider.form.ctechpay</field>
+        <field name="model">payment.provider</field>
+        <field name="inherit_id" ref="payment.payment_provider_form"/>
+        <field name="arch" type="xml">
+            <!-- Insert under provider_credentials like other providers -->
+            <group name="provider_credentials" position="inside">
+                <group invisible="code != 'ctechpay'" string="CTechPay Configuration">
+                    <!--<field name="ctechpay_api_token"
+                           password="True"
+                           attrs="{'required':[('code','=','ctechpay'),('state','!=','disabled')]}"/>-->
+                </group>
+            </group>
+        </field>
+    </record>
+</odoo>

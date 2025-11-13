@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Align with common redirect providers: include auto-submit behavior -->
+    <template id="redirect_form">
+        <form t-att-action="api_url" method="post">
+            <input type="hidden" name="reference" t-att-value="reference"/>
+        </form>
+        <script>
+            document.currentScript.previousElementSibling.submit();
+        </script>
+    </template>
+</odoo>

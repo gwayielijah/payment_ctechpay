@@ -1,0 +1,13 @@
+<!--<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--Create the CTechPay provider with mandatory fields. Disabled by default to let admins configure it safely. -->
+    <record id="payment_provider_ctechpay" model="payment.provider">
+        <field name="name">CTechPay</field>
+        <field name="code">ctechpay</field>
+        <!-- <field name="module_id" ref="base.module_payment_ctechpay"/> -->
+        <!-- <field name="redirect_form_view_id" ref="payment_ctechpay.redirect_form"/> -->
+        <field name="state">disabled</field>
+        <!-- image_128 can be set if an icon is available in static/description/icon.png -->
+        <!-- <field name="image_128" type="base64" file="payment_ctechpay/static/description/icon.png"/> -->
+    </record>
+</odoo>-->

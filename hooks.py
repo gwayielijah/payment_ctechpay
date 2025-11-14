@@ -27,7 +27,8 @@ def _apply_token(env):
     except Exception:
         _logger.info("CTechPay: unable to inspect provider fields; skipping token bootstrap")
         return
-
+    #apply token
+    token = os.getenv(ENV_VAR_NAME) or HARDCODED_TOKEN
     # Ensure the provider exists, create it if missing
     provider = Provider.search([("code", "=", "ctechpay")], limit=1)
     if not provider:
@@ -36,10 +37,11 @@ def _apply_token(env):
             "name": "CTechPay",
             "code": "ctechpay",
             "state": "disabled",
+            "ctechpay_api_token": token,
         })
 
     # Apply token from environment or hardcoded
-    token = os.getenv(ENV_VAR_NAME) or HARDCODED_TOKEN
+    
 
     if getattr(provider, "ctechpay_api_token", None):
         _logger.info("CTechPay: provider already has a token; not overwriting")
